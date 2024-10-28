@@ -1,22 +1,22 @@
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f9f6f1;
-    color: #555;
-    text-align: center;
-    padding: 50px;
-    margin: 0;
-    background-image: url('image.png'); /* アップロードした画像を参照 */
-    background-size: cover; /* 画像が画面全体を覆うようにする */
-    background-position: center; /* 画像の中央を基準に配置 */
-    background-repeat: no-repeat; /* 画像が繰り返されないようにする */
+  font-family: "Georgia", serif;
+  background-color: #f9f6f1;
+  color: #555;
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+  background-image: url("back.png"); /* アップロードした画像を参照 */
+  background-size: cover; /* 画像が画面全体を覆うようにする */
+  background-position: center; /* 画像の中央を基準に配置 */
+  background-repeat: no-repeat; /* 画像が繰り返されないようにする */
 }
 .container {
-    background-color: rgba(255, 250, 240, 0.9); /* 背景が透けて見えるように */
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    margin: auto;
+  background-color: rgba(255, 250, 240, 0.9); /* 背景が透けて見えるように */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
 }
 h1 {
   color: #a37560;
