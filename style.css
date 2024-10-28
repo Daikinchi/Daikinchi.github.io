@@ -13,6 +13,7 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     margin: auto;
+    background-image: url('back.png')
 }
 h1 {
     color: #a37560;
