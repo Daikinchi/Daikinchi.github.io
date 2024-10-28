@@ -5,6 +5,10 @@ body {
     text-align: center;
     padding: 50px;
     margin: 0;
+    background-image: url('leaf1.png'), url('leaf2.png'), url('leaf3.png');
+    background-position: top left, center, bottom right;
+    background-repeat: no-repeat;
+    background-size: 150px;
 }
 .container {
     background-color: #fffaf0;
@@ -39,7 +43,7 @@ h1 {
 .instagram { background-color: #f7a1c4; }
 .tiktok { background-color: #d9d9d9; }
 .youtube { background-color: #fbb1a8; }
-.rakuten { background-color: #cc3399; }
+.rakuten { background-color: #f8b400; }
 .social-links a:hover {
     opacity: 0.85;
 }
