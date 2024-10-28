@@ -1,46 +1,54 @@
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f9f6f1;
-    color: #555;
-    text-align: center;
-    padding: 50px;
-    margin: 0;
+  font-family: "Georgia", serif;
+  background-color: #f9f6f1;
+  color: #555;
+  text-align: center;
+  padding: 50px;
+  margin: 0;
 }
 .container {
-    background-color: #fffaf0;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    margin: auto;
-    background-image: url('back.png')
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  background-image: url("back.png");
 }
 h1 {
-    color: #a37560;
-    font-size: 2em;
-    margin-bottom: 10px;
+  color: #a37560;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 .intro {
-    color: #7e7e7e;
-    font-size: 1.0em;
-    margin-bottom: 20px;
-    line-height: 1.5;
+  color: #7e7e7e;
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 .social-links a {
-    display: inline-block;
-    margin: 10px 5px;
-    text-decoration: none;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease;
-    font-size: 1em;
-    letter-spacing: 0.5px;
+  display: inline-block;
+  margin: 10px 5px;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+  letter-spacing: 0.5px;
 }
-.rakuten { background-color: #cc3399; }
-.instagram { background-color: #f7a1c4; }
-.tiktok { background-color: #d9d9d9; }
-.youtube { background-color: #fbb1a8; }
+.rakuten {
+  background-color: #cc3399;
+}
+.instagram {
+  background-color: #f7a1c4;
+}
+.tiktok {
+  background-color: #d9d9d9;
+}
+.youtube {
+  background-color: #fbb1a8;
+}
 .social-links a:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
