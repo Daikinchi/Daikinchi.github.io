@@ -3,60 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Insta翻訳 | 英語のインスタを日本語で読む</title>
-  <meta name="description" content="英語のInstagram投稿を、ワンタップで日本語に翻訳して読むツール。無料・登録不要。" />
+  <title>Insta翻訳 | リールのURLを日本語に</title>
+  <meta name="description" content="英語のInstagramリール/投稿のURLを貼ると、日本語訳を表示するツール。無料・登録不要。" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="wrap">
     <header class="hero">
       <div class="logo">🌐 Insta翻訳</div>
-      <h1>英語のインスタを<br /><span class="grad">日本語で読む</span></h1>
-      <p class="lead">英語の投稿文を貼り付けてボタンを押すだけ。無料・登録不要で日本語に翻訳します。</p>
+      <h1>英語のリールを<br /><span class="grad">日本語に翻訳</span></h1>
+      <p class="lead">リールや投稿のURLを貼り付けるだけ。無料・登録不要で日本語訳を表示します。</p>
     </header>
 
-    <!-- 入力 -->
+    <!-- URL入力 -->
     <section class="card">
-      <label class="field-label" for="caption">英語の投稿文</label>
-      <textarea id="caption" rows="8" placeholder="Instagramの英語キャプションをここに貼り付けてください..."></textarea>
-
-      <div id="count" class="count">0 文字</div>
-
+      <label class="field-label" for="url">リール / 投稿のURL</label>
+      <input type="url" id="url" placeholder="https://www.instagram.com/reel/..." />
       <div class="controls">
-        <button type="button" id="googleBtn" class="btn-primary">Google翻訳で開く</button>
-        <button type="button" id="deeplBtn" class="btn-ghost">DeepLで開く</button>
-        <button type="button" id="copyBtn" class="btn-ghost">コピー</button>
+        <button type="button" id="translateUrl" class="btn-primary">日本語に訳す</button>
       </div>
-
       <p class="note">
-        ボタンを押すと、翻訳サービスが<strong>新しいタブ</strong>で開き、日本語訳が表示されます。
+        URLから投稿の本文（キャプション）を自動取得して翻訳します。
+        Instagram側の制限で取得できない場合は、下に貼り付け欄が出ます。
       </p>
     </section>
 
-    <!-- 投稿URL -->
-    <section class="card">
-      <label class="field-label" for="url">投稿URL（任意）</label>
-      <input type="url" id="url" placeholder="https://www.instagram.com/p/..." />
+    <!-- 結果 -->
+    <section id="result" class="card result hidden">
+      <div id="resultBody"></div>
+    </section>
+
+    <!-- 手動フォールバック -->
+    <section id="manual" class="card hidden">
+      <label class="field-label" for="caption">投稿文を貼り付けて訳す</label>
+      <textarea id="caption" rows="7" placeholder="リールのキャプション（英語）をここに貼り付けてください..."></textarea>
+      <div class="count" id="count">0 文字</div>
       <div class="controls">
-        <button type="button" id="openPost" class="btn-ghost">投稿を開く</button>
+        <button type="button" id="translateText" class="btn-primary">この文を訳す</button>
+        <button type="button" id="googleBtn" class="btn-ghost">Google翻訳で開く</button>
+        <button type="button" id="deeplBtn" class="btn-ghost">DeepLで開く</button>
       </div>
-      <p class="note">
-        投稿ページを開いて、キャプション部分をコピーし、上の欄に貼り付けてください。
-      </p>
     </section>
 
     <details class="card faq">
-      <summary>AIで「要約」もしたい場合は？</summary>
+      <summary>自動取得がうまくいかない理由は？</summary>
       <div class="faq-body">
         <p>
-          全文翻訳ではなく、AIによる<strong>要約</strong>（要点を数行にまとめる）には、Claude などのAIの API キーが必要です（有料・従量課金）。
-          無料で使いたい場合は、このページの翻訳機能をご利用ください。AI要約版に切り替えたいときは教えてください。
+          Instagram はログインを必須にしており、外部からの自動アクセスを制限しています。
+          そのため、URLからの本文取得は<strong>成功しないこともあります</strong>（特にリールや非公開アカウント）。
+          その場合は、投稿のキャプションをコピーして貼り付け欄に貼ると、確実に翻訳できます。
         </p>
       </div>
     </details>
 
     <footer class="foot">
-      <p>翻訳は Google 翻訳 / DeepL（外部サービス）を利用します · 入力テキストは送信時に各サービスへ渡されます</p>
+      <p>翻訳は Google 翻訳（無料）を利用します · 入力テキストは翻訳時に外部サービスへ送信されます</p>
     </footer>
   </main>
 
