@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insta要約 | 英語のインスタを日本語に要約</title>
+  <meta name="description" content="英語のInstagram投稿を、日本語に翻訳して要約するツール。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div class="logo">🌐 Insta要約</div>
+      <h1>英語のインスタを<br /><span class="grad">日本語に要約</span></h1>
+      <p class="lead">英語の投稿文を貼り付けると、AIが日本語に翻訳して要点をまとめます。</p>
+    </header>
+
+    <!-- APIキー設定 -->
+    <section class="card key-card">
+      <details id="keyDetails">
+        <summary>
+          <span>⚙️ Claude API キーの設定</span>
+          <span id="keyStatus" class="key-status">未設定</span>
+        </summary>
+        <div class="key-body">
+          <p class="hint">
+            AIによる翻訳・要約には Claude の API キーが必要です。キーは<strong>あなたのブラウザにのみ保存</strong>され、Anthropic 以外には送信されません。
+            キーは <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a> で取得できます。
+          </p>
+          <div class="key-row">
+            <input type="password" id="apiKey" placeholder="sk-ant-..." autocomplete="off" spellcheck="false" />
+            <button type="button" id="saveKey" class="btn-ghost">保存</button>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 入力 -->
+    <section class="card">
+      <label class="field-label" for="caption">英語の投稿文（おすすめ・確実）</label>
+      <textarea id="caption" rows="7" placeholder="Instagramの英語キャプションをここに貼り付けてください..."></textarea>
+
+      <label class="field-label" for="url">投稿URL（任意）</label>
+      <input type="url" id="url" placeholder="https://www.instagram.com/p/..." />
+
+      <label class="checkbox">
+        <input type="checkbox" id="useFetch" />
+        <span>URLから本文を自動取得する（実験的・ログイン必須の投稿は失敗する場合があります）</span>
+      </label>
+
+      <div class="controls">
+        <select id="model" aria-label="使用するAIモデル">
+          <option value="claude-opus-4-8">Opus 4.8（高精度）</option>
+          <option value="claude-sonnet-4-6">Sonnet 4.6（バランス）</option>
+          <option value="claude-haiku-4-5" selected>Haiku 4.5（高速・低コスト）</option>
+        </select>
+        <button type="button" id="run" class="btn-primary">要約する</button>
+      </div>
+    </section>
+
+    <!-- 結果 -->
+    <section id="result" class="card result hidden">
+      <div id="resultBody"></div>
+    </section>
+
+    <footer class="foot">
+      <p>Powered by Claude API · キーとデータはこのブラウザ内で扱われます</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
